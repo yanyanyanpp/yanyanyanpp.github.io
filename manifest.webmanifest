@@ -1,0 +1,21 @@
+{
+  "id": "/",
+  "name": "我的小账本",
+  "short_name": "小账本",
+  "description": "只保存在当前手机的个人生活记账应用",
+  "lang": "zh-CN",
+  "start_url": "/#/home",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fff7fa",
+  "theme_color": "#fff7fa",
+  "icons": [
+    {
+      "src": "/theme/kitty-heart.png",
+      "sizes": "201x201",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
