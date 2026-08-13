@@ -1,4 +1,4 @@
-const CACHE_NAME = "kitty-ledger-shell-v1";
+const CACHE_NAME = "kitty-ledger-shell-v2";
 const CORE_ASSETS = [
   "/",
   "/manifest.webmanifest",
@@ -7,7 +7,10 @@ const CORE_ASSETS = [
   "/theme/category-shopping.png",
   "/theme/category-traffic.png",
   "/theme/category-housing.png",
-  "/theme/category-other.png"
+  "/theme/category-other.png",
+  "/theme/records-year.png",
+  "/theme/records-month.png",
+  "/theme/records-day.png"
 ];
 
 self.addEventListener("install", (event) => {
