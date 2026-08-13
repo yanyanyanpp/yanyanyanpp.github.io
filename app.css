@@ -100,8 +100,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .donut strong { font-size: 12px; }
 .donut span { color: var(--muted); font-size: 10px; }
 .legend-list { min-width: 0; display: grid; gap: 7px; }
-.legend-item { min-width: 0; display: grid; grid-template-columns: 8px minmax(38px, 1fr) 34px; align-items: center; column-gap: 6px; font-size: 11px; }
-.legend-item i { width: 8px; height: 8px; border-radius: 50%; }
+.legend-item { min-width: 0; display: grid; grid-template-columns: 32px minmax(38px, 1fr) 34px; align-items: center; column-gap: 6px; font-size: 11px; }
 .legend-item strong { text-align: right; }
 .legend-item small { grid-column: 2 / 4; overflow: hidden; color: var(--muted); font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
 
@@ -191,10 +190,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 
 .record-view-switch { grid-template-columns: repeat(3, 1fr); margin: 0 0 12px; }
 .record-view-switch button { min-height: 42px; }
-.record-banner { width: 100%; height: 90px; display: block; margin: 0 0 12px; border: 1px solid rgba(210,105,145,.26); border-radius: 22px; object-fit: cover; box-shadow: var(--shadow); }
-.record-banner-year { object-position: 52% center; }
-.record-banner-month { object-position: 56% center; }
-.record-banner-day { object-position: 55% center; }
+.record-banner { width: 100%; height: auto; display: block; margin: 0 0 12px; border: 1px solid rgba(210,105,145,.26); border-radius: 22px; object-fit: contain; box-shadow: var(--shadow); }
 .record-summary { position: relative; overflow: hidden; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; margin-bottom: 12px; padding: 15px 12px 12px; border-radius: 22px; color: white; background: linear-gradient(135deg,#e65b86,#c82f62); box-shadow: 0 12px 27px rgba(180,35,82,.18); }
 .record-summary::after { content: "♥"; position: absolute; right: -8px; top: -30px; color: rgba(255,255,255,.1); font-size: 94px; }
 .record-summary > div, .record-summary > small { position: relative; z-index: 1; min-width: 0; }
@@ -203,10 +199,14 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .record-summary strong { font-size: clamp(12px,3.5vw,16px); }
 .record-summary > small { grid-column: 1/-1; padding-top: 9px; border-top: 1px solid rgba(255,255,255,.24); color: rgba(255,255,255,.82); font-size: 9px; }
 .year-month-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 9px; }
-.year-month-grid button { min-width: 0; display: grid; grid-template-columns: 1fr auto; gap: 4px 8px; min-height: 104px; padding: 12px; border: 1px solid var(--line); border-radius: 18px; text-align: left; background: rgba(255,255,255,.95); box-shadow: 0 7px 18px rgba(141,61,90,.07); }
-.year-month-grid button strong { grid-column: 1/-1; color: var(--rose-600); font-size: 16px; }
-.year-month-grid button span { grid-column: 1/-1; overflow: hidden; color: var(--ink); font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
-.year-month-grid button small { grid-column: 1/-1; color: var(--muted); font-size: 9px; }
+.year-month-grid button { min-width: 0; display: grid; grid-template-columns: 54px minmax(0,1fr); grid-template-rows: auto auto auto; align-items: center; gap: 3px 8px; min-height: 114px; padding: 9px; border: 1px solid var(--line); border-radius: 18px; text-align: left; background: rgba(255,255,255,.95); box-shadow: 0 7px 18px rgba(141,61,90,.07); }
+.year-month-grid button.selected { border-color: #eb8ead; background: #fff1f6; box-shadow: 0 8px 20px rgba(180,35,82,.13); }
+.year-month-grid button > img { grid-row: 1/4; width: 54px; height: 54px; object-fit: contain; }
+.year-month-grid button .year-month-name { display: flex; align-items: baseline; gap: 4px; }
+.year-month-grid button .year-month-name strong { color: var(--rose-600); font-size: 15px; }
+.year-month-grid button .year-month-name small { color: var(--muted); font-size: 8px; }
+.year-month-grid button > span:not(.year-month-name) { overflow: hidden; color: var(--ink); font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+.year-month-grid button > small { color: var(--muted); font-size: 8px; }
 .calendar-card { margin-bottom: 12px; padding: 12px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,.95); box-shadow: var(--shadow); }
 .calendar-weekdays, .calendar-days { display: grid; grid-template-columns: repeat(7,minmax(0,1fr)); gap: 4px; text-align: center; }
 .calendar-weekdays { margin-bottom: 7px; color: var(--muted); font-size: 9px; font-weight: 750; }
@@ -218,8 +218,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .month-share-card { margin-bottom: 12px; padding: 6px 13px 11px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,.95); box-shadow: var(--shadow); }
 .month-share-card .section-heading { margin: 0; }
 .month-share-card .section-heading small { color: var(--muted); font-size: 9px; }
-.month-share-row { display: grid; grid-template-columns: 8px minmax(0,1fr) 34px auto; align-items: center; gap: 7px; min-height: 30px; font-size: 10px; }
-.month-share-row i { width: 8px; height: 8px; border-radius: 50%; }
+.month-share-row { display: grid; grid-template-columns: 32px minmax(0,1fr) 34px auto; align-items: center; gap: 7px; min-height: 40px; font-size: 10px; }
 .month-share-row span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .month-share-row b { text-align: right; }
 .month-share-row small { color: var(--muted); font-size: 9px; }
